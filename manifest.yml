@@ -1,0 +1,15 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: Eka IoT-kokeilu
+  host: jamk-huojo-iot
+  disk_quota: 1024M
+  services:
+  - Eka IoT-kokeilu-cloudantNoSQLDB
+  - Eka IoT-kokeilu-iotf-service
+  env:
+    NODE_RED_USERNAME: huojo
+    NODE_RED_PASSWORD: ojouh
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
